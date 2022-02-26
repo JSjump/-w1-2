@@ -9,12 +9,19 @@ describe("Counter", function () {
 
     expect(await counter.getCount()).to.equal(1);
 
-    const addTx = await counter.add();
+    const addOneTx = await counter.addOne();
+
+    // wait until the transaction is mined
+    await addOneTx.wait();
+
+    expect(await counter.getCount()).to.equal(2);
+
+    const addTx = await counter.add(3);
 
     // wait until the transaction is mined
     await addTx.wait();
 
-    expect(await counter.getCount()).to.equal(2);
+    expect(await counter.getCount()).to.equal(5);
 
     // const setGreetingTx = await counter.add();
 
