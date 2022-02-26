@@ -10,7 +10,8 @@
     "search.exclude": {
       "**/node_modules": true,
       "dist": true,
-      "package-lock.json": true
+      "package-lock.json": true,
+      "artifacts":true
     },
     // 指定哪些文件不被 VSCode 监听，预防启动 VSCode 时扫描的文件太多，导致 CPU 占用过高
     "files.watcherExclude": {
